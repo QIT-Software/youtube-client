@@ -1,29 +1,24 @@
-export interface IResponseItem {
-  kind: string;
-  etag: string;
-  id: string;
-  snippet: {
-    publishedAt: string;
-    channelId: string;
-    title: string;
-    description: string;
-    thumbnails: IThumbnailList;
-    channelTitle: string;
-    tags: string[];
-    categoryId: string;
-    liveBoardcastContent: string;
-    localized: { title: string, description: string };
-    defaultAudioLanguage: string;
-  };
-  statistics: IStatistics;
+interface ISnippet {
+  publishedAt?: string;
+  channelId?: string;
+  title?: string;
+  description?: string;
+  thumbnails?: IThumbnailList;
+  channelTitle?: string;
+  tags?: string[];
+  categoryId?: string;
+  liveBroadcastContent?: string;
+  defaultLanguage?: string;
+  localized?: { title: string, description: string };
+  defaultAudioLanguage?: string;
 }
 
 export interface IThumbnailList {
-  default: IThumbnail;
-  medium: IThumbnail;
-  high: IThumbnail;
-  standard: IThumbnail;
-  maxres: IThumbnail;
+  default?: IThumbnail;
+  medium?: IThumbnail;
+  high?: IThumbnail;
+  standard?: IThumbnail;
+  maxres?: IThumbnail;
 }
 export interface IThumbnail {
   url: string;
@@ -36,4 +31,12 @@ export interface IStatistics {
   dislikeCount: string;
   favoriteCount: string;
   commentCount: string;
+}
+
+export interface IResponseItem {
+  kind: string;
+  etag: string;
+  id: string;
+  snippet: ISnippet;
+  statistics: IStatistics;
 }
