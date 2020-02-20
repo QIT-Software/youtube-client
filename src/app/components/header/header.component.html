@@ -1,14 +1,15 @@
 <header>
-  <div class="header-body">
-    <img src="../../../assets/icons/logo.svg" alt="logo">
-    <input type="text" class="search-field">
-    <button class="search-btn btn">search</button>
-    <button class="search-setting btn">
-      <img src="../../../assets/icons/setting.svg" alt="setting">
-    </button>
+  <div class="wrapper">
+    <div class="header-body">
+      <img src="../../../assets/icons/logo.svg" alt="logo">
+      <input #inputElement type="text" class="search-field">
+      <button class="search-btn btn" (click)="search()">search</button>
+      <button class="search-setting btn" (click)="settingBlock=!settingBlock">
+        <img src="../../../assets/icons/setting.svg" alt="setting">
+      </button>
+    </div>
+    <app-login></app-login>
   </div>
-  <div class="user">
-    <div class="user-name">MyName</div>
-    <img src="../../../assets/icons/login.svg" alt="login">
-  </div>
+  <app-sort-setting *ngIf="settingBlock" (sortCard)="sortRun($event)" (filterCard)="filterRun($event)">
+  </app-sort-setting>
 </header>
