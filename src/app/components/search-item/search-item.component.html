@@ -1,37 +1,27 @@
 <div class="search-item card">
   <div class="card-image">
-    <img src="https://i.ytimg.com/vi/YN8zNnV0sK8/mqdefault.jpg" alt="thumbnail">
+    <img [src]="image" alt="thumbnail">
   </div>
   <div class="statistics">
     <div class="view-count">
       <img src="../../../assets/icons/viewed.svg" alt="view">
-      <span>
-        1000
-      </span>
+      <span [textContent]="stat.viewCount"></span>
     </div>
     <div class="like-count">
       <img src="../../../assets/icons/liked.svg" alt="like">
 
-      <span>
-        680
-      </span>
+      <span [textContent]="stat.likeCount"></span>
     </div>
     <div class="dislike-count">
       <img src="../../../assets/icons/dislike.svg" alt="dislike">
-      <span>
-        320
-      </span>
+      <span [textContent]="stat.dislikeCount"></span>
     </div>
     <div class="comment-count">
       <img src="../../../assets/icons/comment.svg" alt="comment">
-      <span>
-        250
-      </span>
+      <span [textContent]="stat.commentCount"></span>
     </div>
   </div>
-  <div class="card-title">
-    Kuji Prodcast #21
-  </div>
+  <div class="card-title">{{title}}</div>
   <button class="card-btn btn">more...</button>
-  <div class="card-mark"></div>
+  <div class="card-mark" [colors]="date"></div>
 </div>
