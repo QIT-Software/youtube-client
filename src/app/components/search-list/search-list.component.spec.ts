@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchListComponent } from './search-list.component';
 
-describe('ViewListComponent', () => {
+describe('ViewListComponent", () => {
   let component: SearchListComponent;
   let fixture: ComponentFixture<SearchListComponent>;
 
@@ -19,7 +19,7 @@ describe('ViewListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create", () => {
     expect(component).toBeTruthy();
   });
 });
