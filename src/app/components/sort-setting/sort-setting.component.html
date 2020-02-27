@@ -1,17 +1,15 @@
-<div class="sort-wrapper">
-  <div class="sort-setting">
-    <div class="sort-text">
-      Sorting by:
-    </div>
-    <div>
-      <a href="#" class="sort-date">date</a>
-    </div>
-    <div>
-      <a href="#" class="sort-count">count of views</a>
-    </div>
-    <div>
-      <span>by word or sentence</span>
-      <input type="text" class="sort-word">
-    </div>
+<div class="sort-setting">
+  <div class="sort-text">
+    Sorting by:
+  </div>
+  <div>
+    <a href="#" class="sort-date" (click)="sortDate()">date</a>
+  </div>
+  <div>
+    <a href="#" class="sort-count" (click)="sortViews()">count of views</a>
+  </div>
+  <div>
+    <label for="text">by word or sentence</label>
+    <input id="text" type="text" class="sort-word" #inputWord (change)="filterWord()">
   </div>
 </div>

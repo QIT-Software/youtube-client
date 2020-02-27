@@ -1,7 +1,3 @@
-.sort-wrapper {
-  width: 1200px;
-  margin: 0 auto;
-}
 .sort-setting {
   margin: 0 auto;
   width: 600px;
@@ -15,7 +11,7 @@
 }
 
 .sort-text,
-.sort-setting span {
+.sort-setting label {
   margin-right: 10px;
 }
 .sort-count {
@@ -27,7 +23,7 @@
 a,
 a:link,
 a:visited,
-span {
+label {
   color: #2f80ed;
 }
 .sort-word {

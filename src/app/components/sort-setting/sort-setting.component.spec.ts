@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SortSettingComponent } from './sort-setting.component';
 
-describe('SortSettingComponent', () => {
+describe('SortSettingComponent", () => {
   let component: SortSettingComponent;
   let fixture: ComponentFixture<SortSettingComponent>;
 
@@ -19,7 +19,7 @@ describe('SortSettingComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create", () => {
     expect(component).toBeTruthy();
   });
 });

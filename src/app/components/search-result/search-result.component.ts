@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IResponse } from '../../models/response.model';
+import { Component, OnInit, Input } from '@angular/core';
+import { IResponseItem } from '../../models/response-item.model';
 
 @Component({
   selector: 'app-search-result',
@@ -7,7 +7,9 @@ import { IResponse } from '../../models/response.model';
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultComponent implements OnInit {
-  public response: IResponse;
+  @Input() public response: IResponseItem[];
+  @Input() public sorts: number;
+  @Input() public words: string;
   constructor() { }
 
   public ngOnInit(): void {
