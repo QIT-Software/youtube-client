@@ -4,17 +4,12 @@ interface DateAgo {
   days: number;
   color: string;
 }
-
-@Injectable(
-  {
-    providedIn: 'root'
-  }
-)
+@Injectable()
 export class DateColorService {
   private colors: DateAgo[] = [
     {days: 7, color: 'blue'},
     {days: 30, color: 'green'},
-    {days: 30 * 6, color: 'red'},
+    {days: 180, color: 'red'},
   ];
   constructor() { }
   public getColor(dateControl: Date ): string {

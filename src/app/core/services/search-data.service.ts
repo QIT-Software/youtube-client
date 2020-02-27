@@ -2,11 +2,7 @@ import { Injectable } from '@angular/core';
 import { IResponse, IResponseItem, dataResponse } from '@model/index';
 import { Subject } from 'rxjs';
 
-@Injectable(
-  {
-    providedIn: 'root'
-  }
-)
+@Injectable()
 export class SearchDataService {
   public response: IResponse;
   public loadData: any = new Subject();

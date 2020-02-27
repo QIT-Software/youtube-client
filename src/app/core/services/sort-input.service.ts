@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ISortFilter } from '@model/index';
 
-@Injectable(
-  {
-    providedIn: 'root'
-  }
-)
+@Injectable()
 export class SortInputService {
   public sorts: ISortFilter;
 

@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SortInputService } from '@coreService/sort-input.service';
 import { IResponseItem, ISortFilter } from '@model/index';
-
-@Injectable(
-  {
-    providedIn: 'root'
-  }
-)
+@Injectable()
 export class SortFunctionService {
   constructor(private sortInput: SortInputService) { }
   public sorting(listCard: IResponseItem[]): IResponseItem[] {

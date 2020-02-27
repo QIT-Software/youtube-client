@@ -29,7 +29,6 @@ export class CardPageComponent implements OnInit {
     this.title = this.responseItem.snippet.title;
     this.date = new Date(this.responseItem.snippet.publishedAt);
     this.description = this.responseItem.snippet.description;
-    console.log(this.responseItem);
   }
   public back(): void {
     this.router.navigate(['/main']);

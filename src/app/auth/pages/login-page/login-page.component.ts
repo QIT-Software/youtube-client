@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserLoginService } from '@authService/user-login.service';
 import { SearchDataService } from '@coreService/search-data.service';
+import { UserLoginService } from '@coreService/user-login.service';
 
 @Component({
   selector: 'app-login-page',
