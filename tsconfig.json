@@ -19,11 +19,10 @@
       "dom"
     ],
     "paths": {
-      "@model/*": ["src/app/models/*"],
-      "@comp/*": ["src/app/components/*"],
-      "@direct/*": ["src/app/directives/*"],
-      "@pipe/*": ["src/app/pipes/*"],
-      "@service/*": ["src/app/services/*"]
+      "@coreService/*": ["src/app/core/services/*"],
+      "@authService/*": ["src/app/auth/services/*"],
+      "@model/*": ["src/app/youtube/models/*"],
+      "@youtubeService/*": ["src/app/youtube/services/*"]
     }
   },
   "angularCompilerOptions": {

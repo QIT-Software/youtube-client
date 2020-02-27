@@ -1,0 +1,30 @@
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { ShowSettingService } from '@coreService/show-setting.service';
+import { SearchDataService } from '@coreService/search-data.service';
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
+})
+export class HeaderComponent implements OnInit {
+  public settingBlock: boolean;
+  public searchWord: string;
+  @ViewChild('inputElement') public inputElement: ElementRef;
+
+  constructor(private searchData: SearchDataService, private showBlockSet: ShowSettingService) {
+    this.settingBlock = this.showBlockSet.get();
+  }
+  public ngOnInit(): void {
+  }
+  public showSetting(): void {
+    this.settingBlock = this.searchData.getResponse() ? this.showBlockSet.toggle() : false;
+  }
+  public search(): void {
+    this.searchWord = this.inputElement.nativeElement.value;
+    if (this.searchWord) {
+      this.searchData.mockHttp();
+    } else {
+      this.searchData.clear();
+    }
+  }
+}

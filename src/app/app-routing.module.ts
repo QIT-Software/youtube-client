@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FailPageComponent } from '@comp/fail-page/fail-page.component';
-import { AuthGuard } from './guard/auth.guard';
+import { FailPageComponent } from './core/pages/fail-page/fail-page.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},

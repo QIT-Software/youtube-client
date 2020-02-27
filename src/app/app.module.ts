@@ -1,41 +1,48 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SortSettingComponent } from './components/sort-setting/sort-setting.component';
-import { SearchItemComponent } from './components/search-item/search-item.component';
-import { SearchListComponent } from './components/search-list/search-list.component';
-import { LoginComponent } from './components/login/login.component';
-import { BgColorDateDirective } from './directives/bg-color-date.directive';
-import { SortCardPipe } from './pipes/sort-card.pipe';
-import { FilterCardPipe } from './pipes/filter-card.pipe';
-import { FailPageComponent } from './components/fail-page/fail-page.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { CardPageComponent } from './components/card-page/card-page.component';
+// import { CoreModule } from './core/core.module';
+// import { AuthGuard } from './core/guards/auth.guard';
+// import { UserLoginService } from '@authService/user-login.service';
+import { HeaderComponent } from './core/components/header/header.component';
+import { SortSettingComponent } from './core/components/sort-setting/sort-setting.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { FailPageComponent } from './core/pages/fail-page/fail-page.component';
+// import { ShowSettingService } from '@coreService/show-setting.service';
+import { SearchItemComponent } from './youtube/components/search-item/search-item.component';
+import { SearchListComponent } from './youtube/pages/search-list/search-list.component';
+import { BgColorDateDirective } from './youtube/directives/bg-color-date.directive';
+import { SortCardPipe } from './youtube/pipes/sort-card.pipe';
+import { FilterCardPipe } from './youtube/pipes/filter-card.pipe';
+import { CardPageComponent } from './youtube/pages/card-page/card-page.component';
+// import { SortFunctionService } from '@youtubeService/sort-function.service';
+// import { DateColorService } from '@youtubeService/date-color.service';
+import { LoginPageComponent } from './auth/pages/login-page/login-page.component';
+// import { SearchDataService } from '@coreService/search-data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SortSettingComponent,
+    LoginComponent,
+    FailPageComponent,
     SearchItemComponent,
     SearchListComponent,
-    LoginComponent,
     BgColorDateDirective,
     SortCardPipe,
     FilterCardPipe,
-    FailPageComponent,
-    LoginPageComponent,
-    CardPageComponent
+    CardPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
