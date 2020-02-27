@@ -7,11 +7,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { SortSettingComponent } from './components/sort-setting/sort-setting.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchListComponent } from './components/search-list/search-list.component';
-import { SearchResultComponent } from './components/search-result/search-result.component';
 import { LoginComponent } from './components/login/login.component';
 import { BgColorDateDirective } from './directives/bg-color-date.directive';
 import { SortCardPipe } from './pipes/sort-card.pipe';
 import { FilterCardPipe } from './pipes/filter-card.pipe';
+import { FailPageComponent } from './components/fail-page/fail-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { CardPageComponent } from './components/card-page/card-page.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { FilterCardPipe } from './pipes/filter-card.pipe';
     SortSettingComponent,
     SearchItemComponent,
     SearchListComponent,
-    SearchResultComponent,
     LoginComponent,
     BgColorDateDirective,
     SortCardPipe,
-    FilterCardPipe
+    FilterCardPipe,
+    FailPageComponent,
+    LoginPageComponent,
+    CardPageComponent
   ],
   imports: [
     BrowserModule,

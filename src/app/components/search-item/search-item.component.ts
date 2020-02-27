@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IResponseItem, IThumbnailList, IStatistics } from '../../models/response-item.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-item',
@@ -14,7 +15,7 @@ export class SearchItemComponent implements OnInit {
   public title: string;
   public date: Date;
   public color: string;
-  constructor() { }
+  constructor(private router: Router) { }
 
   public ngOnInit(): void {
     this.imagesList = this.responseItem.snippet.thumbnails;
@@ -22,5 +23,8 @@ export class SearchItemComponent implements OnInit {
     this.stat = this.responseItem.statistics;
     this.title = this.responseItem.snippet.title;
     this.date = new Date(this.responseItem.snippet.publishedAt);
+  }
+  public info(): void {
+    this.router.navigate(['/main/card', this.responseItem.id]);
   }
 }

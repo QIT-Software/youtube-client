@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { SortInputService } from '@service/index';
 
 @Component({
   selector: 'app-sort-setting',
@@ -6,26 +7,18 @@ import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '
   styleUrls: ['./sort-setting.component.scss']
 })
 export class SortSettingComponent implements OnInit {
-  public sortOf: number;
-  public words: string;
   @ViewChild('inputWord') public inputWord: ElementRef;
-  @Output() public sortCard: EventEmitter<number> = new EventEmitter();
-  @Output() public filterCard: EventEmitter<string> = new EventEmitter();
-  constructor() { }
+  constructor(private sortInput: SortInputService) { }
 
   public ngOnInit(): void {
   }
   public sortDate(): void {
-    this.sortOf = 1;
-    this.sortCard.emit(this.sortOf);
+    this.sortInput.dateClick();
   }
   public sortViews(): void {
-    this.sortOf = 2;
-    this.sortCard.emit(this.sortOf);
+    this.sortInput.viewClick();
   }
   public filterWord(): void {
-    this.words = this.inputWord.nativeElement.value;
-    this.filterCard.emit(this.words);
+    this.sortInput.wordInput(this.inputWord.nativeElement.value);
   }
-
 }

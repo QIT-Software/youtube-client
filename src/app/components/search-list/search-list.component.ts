@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { IResponseItem } from '../../models/response-item.model';
+import { IResponseItem } from '@model/index';
+import { SearchDataService } from '@service/index';
 
 @Component({
   selector: 'app-search-list',
@@ -7,20 +8,17 @@ import { IResponseItem } from '../../models/response-item.model';
   styleUrls: ['./search-list.component.scss']
 })
 export class SearchListComponent implements OnInit, OnChanges {
-  @Input() public response: IResponseItem[];
-  @Input() public sorts: number;
-  @Input() public words: string;
-  public filter: string;
-  public method: number;
+  public response: IResponseItem[];
 
-  constructor() { }
-
+  constructor(private searchData: SearchDataService) {
+    this.response = this.searchData.getResponseItems();
+  }
   public ngOnInit(): void {
-
+    this.searchData.loadData.subscribe((data: IResponseItem[]) => {
+      this.response = data;
+    });
   }
-  public ngOnChanges() {
-    this.method = this.sorts;
-    this.filter = this.words;
+  public ngOnChanges(): void {
+    this.response = this.searchData.getResponseItems();
   }
-
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { UserLoginService } from '@service/user-login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   public userName: string;
-  constructor() {
-    this.userName = 'MyName1';
+  constructor(public userLogin: UserLoginService, private router: Router) {
+    this.userName = this.userLogin.getName();
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.userLogin.loadUserName.subscribe((data: string) => {
+      this.userName = data;
+    });
+  }
+  public login(): void {
+    this.router.navigate(['/login']);
   }
 
 }

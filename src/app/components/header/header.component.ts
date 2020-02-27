@@ -1,48 +1,30 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
-import { LoginComponent } from '../login/login.component';
-import { SortSettingComponent } from '../sort-setting/sort-setting.component';
-import { IResponse } from '../../models/response.model';
-import { IResponseItem } from '../../models/response-item.model';
-import { dataResponse } from './data';
+import { IResponse, IResponseItem } from '@model/index';
+import { SearchDataService, ShowSettingService } from '@service/index';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public response: IResponse;
-  public listItem: IResponseItem[];
   public settingBlock: boolean;
   public searchWord: string;
-  public sorts: number;
-  public words: string;
   @ViewChild('inputElement') public inputElement: ElementRef;
-  @ViewChild(LoginComponent) public loginComp: LoginComponent;
-  @ViewChild(SortSettingComponent) public sortComp: SortSettingComponent;
-  @Output() public list: EventEmitter<IResponseItem[]> = new EventEmitter();
-  @Output() public sortCard: EventEmitter<number> = new EventEmitter();
-  @Output() public filterCard: EventEmitter<string> = new EventEmitter();
 
-  constructor() {
-    this.settingBlock = false;
+  constructor(private searchData: SearchDataService, private showBlockSet: ShowSettingService) {
+    this.settingBlock = this.showBlockSet.get();
   }
-
   public ngOnInit(): void {
   }
-
+  public showSetting(): void {
+    this.settingBlock = this.searchData.getResponse() ? this.showBlockSet.toggle() : false;
+  }
   public search(): void {
     this.searchWord = this.inputElement.nativeElement.value;
-    this.response = dataResponse;
-    this.listItem = this.response.items;
-    this.list.emit(this.listItem);
+    if (this.searchWord) {
+      this.searchData.mockHttp();
+    } else {
+      this.searchData.clear();
+    }
   }
-  public sortRun(method: number): void {
-    this.sorts = method;
-    this.sortCard.emit(this.sorts);
-  }
-  public filterRun(filter: string): void {
-    this.words = filter;
-    this.filterCard.emit(this.words);
-  }
-
 }

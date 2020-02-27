@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FailPageComponent } from '@comp/fail-page/fail-page.component';
+import { AuthGuard } from './guard/auth.guard';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', redirectTo: 'main', pathMatch: 'full'},
+  {path: 'main', loadChildren: () => import('./youtube/youtube.module')
+            .then(m => m.YoutubeModule), canLoad: [AuthGuard]},
+  {path: 'login', loadChildren: () => import('./auth/auth.module')
+            .then(m => m.AuthModule)},
+  {path: '**', component: FailPageComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
