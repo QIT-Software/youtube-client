@@ -1,19 +1,18 @@
-<div class="login">
+<div class="login" (keyup)="escape($event)">
   <div class="wrapper">
     <h1>
       Login
     </h1>
     <div class="login__username">
       <label for="username">login</label>
-      <input id="username" #inputName type="text">
+      <input id="username" #name type="text" >
     </div>
     <div class="login__pass">
       <label for="pass">password</label>
-      <input id="pass" #inputPass type="password">
+      <input id="pass" #pass type="password">
     </div>
     <div class="login__buttons">
-      <button class="btn" (click)="login()">Login</button>
-      <button class="btn" (click)="logout()">Logout</button>
+      <button class="btn" (click)="login()" >{{logged ? 'Logout' : 'Login' }}</button>
     </div>
   </div>
 </div>
