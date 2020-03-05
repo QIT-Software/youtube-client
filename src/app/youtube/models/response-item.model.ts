@@ -26,17 +26,20 @@ export interface IThumbnail {
   height: number;
 }
 export interface IStatistics {
-  viewCount: string;
-  likeCount: string;
-  dislikeCount: string;
-  favoriteCount: string;
-  commentCount: string;
+  viewCount?: string;
+  likeCount?: string;
+  dislikeCount?: string;
+  favoriteCount?: string;
+  commentCount?: string;
 }
 
 export interface IResponseItem {
   kind: string;
   etag: string;
-  id: string;
-  snippet: ISnippet;
-  statistics: IStatistics;
+  id?: string | {
+    kind?: string;
+    videoId?: string;
+  };
+  snippet?: ISnippet;
+  statistics?: IStatistics;
 }

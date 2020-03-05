@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardPageComponent } from './card-page.component';
+import { CoreModule } from 'src/app/core/core.module';
+import { ActivatedRoute } from '@angular/router';
 
 describe('CardPageComponent', () => {
   let component: CardPageComponent;
@@ -8,7 +10,8 @@ describe('CardPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardPageComponent ]
+      declarations: [ CardPageComponent ],
+      imports: [CoreModule, ActivatedRoute]
     })
     .compileComponents();
   }));

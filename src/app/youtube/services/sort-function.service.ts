@@ -3,7 +3,7 @@ import { SortInputService } from '@coreService/sort-input.service';
 import { IResponseItem, ISortFilter } from '@model/index';
 @Injectable()
 export class SortFunctionService {
-  constructor(private sortInput: SortInputService) { }
+  constructor(private sortInput?: SortInputService) { }
   public sorting(listCard: IResponseItem[]): IResponseItem[] {
     let result: IResponseItem[] = listCard.slice();
     let sortFilter: ISortFilter = this.sortInput.getSortMethod();

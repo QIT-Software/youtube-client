@@ -8,4 +8,6 @@ export interface IResponse {
     resultsPerPage: number
   };
   items: IResponseItem[];
+  nextPageToken?: string;
+  regionCode?: string;
 }

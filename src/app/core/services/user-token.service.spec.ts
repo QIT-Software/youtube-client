@@ -1,17 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SearchDataService } from './search-data.service';
+import { UserTokenService } from './user-token.service';
 import { CoreModule } from '../core.module';
 
-describe('SearchDataService', () => {
-  let service: SearchDataService;
+describe('UserTokenService', () => {
+  let service: UserTokenService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [CoreModule],
-      providers: [SearchDataService]
+      providers: [UserTokenService]
     });
-    service = TestBed.inject(SearchDataService);
+    service = TestBed.inject(UserTokenService);
   });
 
   it('should be created', () => {

@@ -6,7 +6,7 @@ import { IResponseItem } from '@model/response-item.model';
   name: 'filterCard'
 })
 export class FilterCardPipe implements PipeTransform {
-  constructor(private sort: SortFunctionService) { }
+  constructor(private sort?: SortFunctionService) { }
   public transform(listCard: IResponseItem[]): IResponseItem[] {
     return this.sort.filtering(listCard);
   }

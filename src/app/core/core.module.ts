@@ -8,27 +8,38 @@ import { ShowSettingService } from '@coreService/show-setting.service';
 import { SortInputService } from '@coreService/sort-input.service';
 import { AuthGuard } from './guards/auth.guard';
 import { SearchDataService } from '@coreService/search-data.service';
-import { UserLoginService } from '@coreService/user-login.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestHttpService, BaseUrlInterceptor, AuthTokenInterceptor } from '@coreService/index';
+import { UserTokenService } from '@coreService/user-token.service';
+import { WindowErrorComponent } from './components/window-error/window-error.component';
+import { MessageService } from '@coreService/message.service';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     LoginComponent,
     SortSettingComponent,
-    FailPageComponent
+    FailPageComponent,
+    WindowErrorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     AuthGuard,
     ShowSettingService,
     SortInputService,
     SearchDataService,
-    UserLoginService
+    RequestHttpService,
+    UserTokenService,
+    MessageService,
+    {provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true }
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    HttpClientModule
   ]
 })
 export class CoreModule { }
