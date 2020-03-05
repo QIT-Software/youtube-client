@@ -8,7 +8,7 @@ import { SortInputService } from '@coreService/sort-input.service';
 })
 export class SortSettingComponent implements OnInit {
   @ViewChild('inputWord') public inputWord: ElementRef;
-  constructor(private sortInput: SortInputService) { }
+  constructor(private sortInput?: SortInputService) { }
 
   public ngOnInit(): void {
   }
