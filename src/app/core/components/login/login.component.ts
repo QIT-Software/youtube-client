@@ -1,25 +1,28 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserLoginService } from '@coreService/user-login.service';
+import { UserTokenService } from '@coreService/user-token.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   public userName: string;
-  constructor(public userLogin: UserLoginService, private router: Router) {
-    this.userName = this.userLogin.getName();
+  constructor(public userToken: UserTokenService, private router: Router) {
+    this.userName = this.userToken.get();
   }
 
   public ngOnInit(): void {
-    this.userLogin.loadUserName.subscribe((data: string) => {
-      this.userName = data;
+    this.userToken.logged.subscribe(() => {
+      this.userName = this.userToken.get();
     });
   }
   public login(): void {
     this.router.navigate(['/login']);
   }
 
+  public ngOnDestroy(): void {
+    this.userToken.logged.unsubscribe();
+  }
 }
