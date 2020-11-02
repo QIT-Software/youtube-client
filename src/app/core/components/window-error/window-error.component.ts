@@ -21,8 +21,7 @@ export class WindowErrorComponent implements OnInit, OnDestroy {
         }
         this.show = obj.show;
         if (obj.timer) {
-
-          setTimeout(() => { this.show = false; }, obj.timer );
+          setTimeout(stop, obj.timer );
         } else if (this.show) {
           this.show1 = true;
         } else {

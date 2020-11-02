@@ -14,7 +14,7 @@ export class DateColorService {
     { days: 30, r: 0, g: 128, b: 0 },
     { days: 150, r: 255, g: 255, b: 0 },
     { days: 180, r: 47, g: 128, b: 226 },
-    { days: 181, r: 255, g: 0, b: 0 },
+    { days: 182, r: 255, g: 0, b: 0 },
   ];
   constructor() { }
   public getColor(dateControl: Date): string {

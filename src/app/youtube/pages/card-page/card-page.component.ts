@@ -19,8 +19,8 @@ export class CardPageComponent implements OnInit {
   public description: string;
   public id: string;
 
-  constructor(private searchData?: SearchDataService, private route?: ActivatedRoute,
-              private router?: Router) { }
+  constructor(private searchData: SearchDataService, private route: ActivatedRoute,
+              private router: Router) { }
 
   public ngOnInit(): void {
     this.stat = {} as IStatistics;

@@ -1,6 +1,7 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,6 +12,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA  ]
     }).compileComponents();
   }));
 
@@ -30,6 +32,6 @@ describe('AppComponent', () => {
     const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled: HTMLElement = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('youtube-client app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('youtube-client');
   });
 });

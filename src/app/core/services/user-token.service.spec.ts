@@ -8,7 +8,6 @@ describe('UserTokenService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [CoreModule],
       providers: [UserTokenService]
     });
     service = TestBed.inject(UserTokenService);
@@ -17,4 +16,10 @@ describe('UserTokenService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+
 });

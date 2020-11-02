@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserTokenService } from '@coreService/user-token.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +9,15 @@ import { UserTokenService } from '@coreService/user-token.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
+  private obs: Subscription;
   public userName: string;
+
   constructor(public userToken: UserTokenService, private router: Router) {
     this.userName = this.userToken.get();
   }
 
   public ngOnInit(): void {
-    this.userToken.logged.subscribe(() => {
+    this.obs = this.userToken.logged.subscribe(() => {
       this.userName = this.userToken.get();
     });
   }
@@ -23,6 +26,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
-    this.userToken.logged.unsubscribe();
+    this.obs.unsubscribe();
   }
 }

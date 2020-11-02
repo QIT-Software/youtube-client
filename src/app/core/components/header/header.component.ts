@@ -10,7 +10,6 @@ import { debounceTime, map } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   public settingBlock: boolean;
-  // public searchWord: string;
   @ViewChild('inputElement') public inputElement: ElementRef;
 
   constructor(private searchData: SearchDataService, private showBlockSet: ShowSettingService) {
@@ -25,8 +24,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   public ngAfterViewInit(): void {
     fromEvent(this.inputElement.nativeElement, 'keyup')
-      .pipe(debounceTime(1000), map(() => this.inputElement.nativeElement.value))
-      .subscribe((val) => {
+      .pipe(
+        debounceTime(1000),
+        map(() => this.inputElement.nativeElement.value))
+      .subscribe( (val) => {
         if (!val) {
           this.searchData.clear();
         } else if (val.length > 2) {
