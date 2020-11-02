@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@coreService/*": ["src/app/core/services/*"],
+      "@authService/*": ["src/app/auth/services/*"],
+      "@model/*": ["src/app/youtube/models/*"],
+      "@youtubeService/*": ["src/app/youtube/services/*"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

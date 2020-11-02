@@ -1,0 +1,15 @@
+<div class="sort-setting">
+  <div class="sort-text">
+    Sorting by:
+  </div>
+  <div>
+    <span class="sort-date" (click)="sortDate()">date</span>
+  </div>
+  <div>
+    <span class="sort-count" (click)="sortViews()">count of views</span>
+  </div>
+  <div>
+    <label for="text">by word or sentence</label>
+    <input id="text" type="text" class="sort-word" #inputWord (change)="filterWord()">
+  </div>
+</div>

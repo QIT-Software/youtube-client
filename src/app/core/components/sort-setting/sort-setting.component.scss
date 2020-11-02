@@ -1,0 +1,38 @@
+.sort-setting {
+  margin: 0 auto;
+  width: 600px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.sort-setting > div {
+  display: inline-block;
+}
+  span {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+.sort-text,
+.sort-setting label{
+  margin-right: 10px;
+}
+
+.sort-count {
+  margin: 0 20px;
+}
+.sort-text {
+  color: #929292;
+}
+span,
+label {
+  color: #2f80ed;
+}
+.sort-word {
+  height: 13px;
+  width: 149px;
+  color: #333333;
+  border: none;
+  padding: 3px 5px;
+  font-size: 8px;
+}

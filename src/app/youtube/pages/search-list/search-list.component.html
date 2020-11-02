@@ -1,0 +1,6 @@
+<div class="cards-wrapper">
+  <div class="cards" >
+    <app-search-item *ngFor="let card of response|sortCard|filterCard" [responseItem]="card">
+    </app-search-item>
+  </div>
+</div>

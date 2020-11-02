@@ -1,3 +1,4 @@
+@import './constants';
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -16,6 +17,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: inherit;
 }
 body {
   // background-color: #e5e5e5;
@@ -26,12 +28,12 @@ body {
 }
 .btn {
   border-radius: 5px;
-  background-color: #2f80ed;
-  box-shadow: 2px 0px 4px #2f80ed;
-  color: #ffffff;
+  background-color: $color_main;
+  box-shadow: 2px 0px 4px $color_main;
+  color: $color_main_text;
   &:hover {
-    background-color: darken(#2f80ec, 10%);
-    box-shadow: 3px 0px 5px darken(#2f80ed, 10%);
+    background-color: $color_main_hover;
+    box-shadow: 3px 0px 5px $color_main_hover;
     cursor: pointer;
   }
 }
