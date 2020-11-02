@@ -5,20 +5,20 @@
   <div class="statistics">
     <div class="view-count">
       <img src="../../../../assets/icons/viewed.svg" alt="view">
-      <span [textContent]="stat.viewCount"></span>
+      <span [textContent]="stat.viewCount || 0"></span>
     </div>
     <div class="like-count">
       <img src="../../../../assets/icons/liked.svg" alt="like">
 
-      <span [textContent]="stat.likeCount"></span>
+      <span [textContent]="stat.likeCount || 0"></span>
     </div>
     <div class="dislike-count">
       <img src="../../../../assets/icons/dislike.svg" alt="dislike">
-      <span [textContent]="stat.dislikeCount"></span>
+      <span [textContent]="stat.dislikeCount || 0"></span>
     </div>
     <div class="comment-count">
       <img src="../../../../assets/icons/comment.svg" alt="comment">
-      <span [textContent]="stat.commentCount"></span>
+      <span [textContent]="stat.commentCount || 0"></span>
     </div>
   </div>
   <div class="card-title">{{title}}</div>

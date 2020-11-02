@@ -2,8 +2,7 @@
   <div class="wrapper">
     <div class="header-body">
       <img src="../../../../assets/icons/logo.svg" alt="logo">
-      <input #inputElement type="text" class="search-field" (change)="search()">
-      <button class="search-btn btn" (click)="search()">search</button>
+      <input #inputElement type="text" class="search-field">
       <button class="search-setting btn" (click)="showSetting()">
         <img src="../../../../assets/icons/setting.svg" alt="setting">
       </button>
@@ -13,3 +12,4 @@
   <app-sort-setting *ngIf="settingBlock">
   </app-sort-setting>
 </header>
+<app-window-error></app-window-error>

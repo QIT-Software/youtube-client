@@ -3,4 +3,7 @@
     <app-search-item *ngFor="let card of response|sortCard|filterCard" [responseItem]="card">
     </app-search-item>
   </div>
+  <div class="next-block" *ngIf="showNext">
+    <button class="btn next-btn" (click)="next()">Next page</button>
+  </div>
 </div>

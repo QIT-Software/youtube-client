@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
-@Injectable(
-
-)
+@Injectable()
 export class ShowSettingService {
-  private show: boolean;
+  private canShow: boolean;
+  public changeShow: Subject<boolean> = new Subject();
 
   constructor() {
-    this.show = false;
+    this.canShow = false;
+  }
+  public change(): void {
+    this.changeShow.next(this.canShow);
   }
   public hide(): void {
-    this.show = false;
+    this.canShow = false;
+    this.change();
   }
   public visible(): void {
-    this.show = false;
+    this.canShow = true;
+    this.change();
   }
-  public toggle(): boolean {
-    this.show = !this.show;
-    return this.show;
-  }
+
   public get(): boolean {
-    return this.show;
+    return this.canShow;
   }
 }
