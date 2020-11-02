@@ -9,6 +9,7 @@ import { FilterCardPipe } from './pipes/filter-card.pipe';
 import { CardPageComponent } from './pages/card-page/card-page.component';
 import { DateColorService } from '@youtubeService/date-color.service';
 import { SortFunctionService } from '@youtubeService/sort-function.service';
+import { ShadowDateDirective } from './directives/shadow-date.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SortFunctionService } from '@youtubeService/sort-function.service';
     SortCardPipe,
     FilterCardPipe,
     CardPageComponent,
+    ShadowDateDirective,
   ],
   imports: [
     CommonModule,

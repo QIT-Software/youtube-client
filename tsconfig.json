@@ -19,6 +19,7 @@
       "dom"
     ],
     "paths": {
+      "@env/*": ["src/environments/*"],
       "@coreService/*": ["src/app/core/services/*"],
       "@authService/*": ["src/app/auth/services/*"],
       "@model/*": ["src/app/youtube/models/*"],
