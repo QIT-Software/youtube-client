@@ -4,8 +4,7 @@
 
 export const environment: { production: boolean, API_KEY: string, BASE_URL: string } = {
   production: false,
-  // API_KEY: 'AIzaSyDCjP4KCrd2NpSuO-b1hNn0ylO9Xpi2Q8E',
-  API_KEY: 'AIzaSyBdKDbwwQBsulBaz4-KbiAS2nomsu2QzEE',
+  API_KEY: 'AIzaSyCQeFoCOqjiBgizI6tr7J5JdiSSJKEFkak',
   BASE_URL: 'https://www.googleapis.com/youtube/v3'
 };
 
